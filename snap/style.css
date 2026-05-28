@@ -1,0 +1,409 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* GLOBAL SNAP */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+    background:
+            radial-gradient(circle at top, #1a1a1a, #000 65%),
+            linear-gradient(180deg, #0a0a0a, #000);
+    overflow-x: hidden;
+}
+
+/* SNAP LIGHT OVERLAY */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+            radial-gradient(circle at center, rgba(255,252,0,0.12), transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* TOP BAR SNAP JAUNE */
+/* HEADER SNAP PREMIUM */
+.topbar {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1200px;
+
+    background: rgba(255,252,0,0.92);
+    backdrop-filter: blur(12px);
+
+    padding: 16px 26px;
+    border-radius: 22px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+    transition: all 0.35s ease;
+    z-index: 10;
+
+    animation: slideDown 0.6s ease forwards;
+}
+
+
+/* ÉTAT RÉDUIT AU SCROLL */
+.topbar.shrink {
+    padding: 8px 20px;
+    border-radius: 18px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* LOGO SNAP */
+.snap-logo {
+    display: flex;
+    align-items: center;
+}
+
+/* BOUTON LOGIN */
+.login-btn {
+    background: #000;
+    color: #fffc00;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* HERO */
+.hero {
+    height: 100vh;
+    padding-top: 120px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+
+    background: radial-gradient(
+            circle at top,
+            rgba(255,252,0,0.25),
+            transparent 60%
+    );
+}
+
+
+.badge {
+    background: rgba(255,252,0,0.18);
+    color: #fffc00;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.hero p {
+    max-width: 480px;
+    color: #ccc;
+    margin: 15px 0;
+}
+
+/* COUNTDOWN */
+.countdown {
+    background: rgba(255,252,0,0.18);
+    padding: 10px 22px;
+    border-radius: 999px;
+    margin: 15px 0;
+    animation: pulse 2s infinite;
+}
+
+.countdown.urgent {
+    background: rgba(255,60,60,0.25);
+    color: #ff4d4d;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 rgba(255,252,0,0.4); }
+    50% { box-shadow: 0 0 25px rgba(255,252,0,0.6); }
+    100% { box-shadow: 0 0 0 rgba(255,252,0,0.4); }
+}
+
+/* BUTTONS */
+button {
+    background: #fffc00;
+    color: #000;
+    border: none;
+    padding: 16px 38px;
+    border-radius: 999px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255,252,0,0.45);
+}
+
+.cta {
+    font-size: 1.05rem;
+}
+
+/* GIVEAWAY */
+.giveaway {
+    padding: 90px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.card {
+    max-width: 1000px;
+    margin: auto;
+    background: rgba(20,20,20,0.8);
+    backdrop-filter: blur(16px);
+    border-radius: 30px;
+    padding: 45px ;
+
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+}
+
+
+
+
+.benefits {
+    list-style: none;
+    margin: 25px 0;
+    line-height: 2;
+}
+
+/* STEPS */
+.steps {
+    padding: 90px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(255,252,0,0.06), transparent);
+    z-index: 2;
+    position: relative;
+}
+
+.steps ol {
+    margin-top: 25px;
+    line-height: 2;
+    list-style: none;
+    padding-left: 0;
+
+}
+
+
+
+/* FOOTER */
+.footer {
+    padding: 45px 20px;
+    text-align: center;
+    background: #000;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    z-index: 2;
+    position: relative;
+}
+
+.footer-logo {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #aaa;
+    font-size: 13px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* BITMOJI ULTRA IMMERSIF */
+.bitmoji {
+    position: fixed;
+    bottom: -80px;
+    width: 600px;
+    opacity: 0.22;
+    filter: blur(0.5px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bitmoji-left {
+    left: -120px;
+}
+
+.bitmoji-right {
+    right: -120px;
+    transform: scaleX(-1);
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background: rgba(15,15,15,0.95);
+    backdrop-filter: blur(18px);
+    border-radius: 30px;
+    padding: 40px;
+    width: 90%;
+    max-width: 380px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content input {
+    padding: 15px 20px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.success {
+    display: none;
+}
+
+.success h3 {
+    color: #fffc00;
+    margin-bottom: 10px;
+}
+
+.success .small {
+    font-size: 12px;
+    color: #888;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .bitmoji {
+        width: 260px;
+        opacity: 0.1;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+}
+.plus-features {
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.plus-features h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+
+.feature-card {
+    background: rgba(20,20,20,0.85);
+    border-radius: 26px;
+    padding: 35px 25px;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    transition: transform 0.25s;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+.feature-card:hover {
+    transform: translateY(-8px);
+}
+
+.feature-card span {
+    font-size: 32px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+.logosnap{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
